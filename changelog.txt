@@ -4,4 +4,6 @@ Date: ????
   Changes:
     - This is a drop-in replacement for the WideChests/Merging Chests mod. It cannot be used alongside it, but it is one-for-one compatible.
     - Blueprints with merging chests created or updated after this version will be fully orientable. (Old blueprints will still work in a non-orientable fashion.)
+  Bugfixes:
+    - Fixed mode of merge selection tool.
 
