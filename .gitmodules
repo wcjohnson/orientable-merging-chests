@@ -1,0 +1,3 @@
+[submodule "core"]
+	path = lib/core
+	url = https://github.com/wcjohnson/factorio-mod-core.git
