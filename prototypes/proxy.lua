@@ -6,7 +6,7 @@ local data_util = require("lib.core.data-util")
 
 ---@type data.Sprite
 local invisible_sprite = {
-	filename = "__orientable-merging-chests__/graphics/invisible.png",
+	filename = "__WideChests__/graphics/invisible.png",
 	width = 1,
 	height = 1,
 }
@@ -31,19 +31,19 @@ local ZERO_CONNECTION_POINT = {
 local proxy_item = {
 	-- PrototypeBase
 	type = "item",
-	name = "orientable-merging-chests-proxy-item",
+	name = "WideChests-proxy-item",
 	order = "f[iber-optics]",
 	subgroup = "circuit-network",
 	hidden_in_factoriopedia = true,
 
 	-- ItemPrototype
 	stack_size = 50,
-	icon = "__orientable-merging-chests__/graphics/icons/merge-chest-selector.png",
+	icon = "__WideChests__/graphics/icons/merge-chest-selector.png",
 	icon_size = 32,
-	place_result = "orientable-merging-chests-proxy",
 	flags = { "hide-from-bonus-gui", "only-in-cursor" },
 	weight = 0,
 }
+data:extend({ proxy_item })
 
 local function make_proxy_entity(width, height)
 	---@type data.ElectricPolePrototype
@@ -51,7 +51,7 @@ local function make_proxy_entity(width, height)
 		-- PrototypeBase
 		type = "electric-pole",
 		name = table.concat(
-			{ "orientable-merging-chests-proxy", width, height },
+			{ "WideChests-proxy", width, height },
 			"-"
 		),
 		hidden_in_factoriopedia = true,
@@ -74,14 +74,14 @@ local function make_proxy_entity(width, height)
 		max_health = 1,
 
 		-- EntityPrototype
-		icon = "__orientable-merging-chests__/graphics/icons/merge-chest-selector.png",
+		icon = "__WideChests__/graphics/icons/merge-chest-selector.png",
 		icon_size = 32,
 		collision_box = {
 			{ -width / 2 + 0.15, -height / 2 + 0.15 },
 			{ width / 2 - 0.15, height / 2 - 0.15 },
 		},
 		selection_box = { { -width / 2, -height / 2 }, { width / 2, height / 2 } },
-		placeable_by = { item = "orientable-merging-chests-proxy-item", count = 1 },
+		placeable_by = { item = "WideChests-proxy-item", count = 1 },
 		fast_replaceable_group = nil,
 		flags = {
 			"not-on-map",
