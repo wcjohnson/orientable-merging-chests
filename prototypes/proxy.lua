@@ -7,28 +7,30 @@ local create_sprite = require("scripts.sprite_generation")
 
 local segments = {
 	entity = {
-		filename = "__WideChests__/graphics/entity/"
-			.. MergingChests.chest_names.steel
-			.. "/trashdump/trashdump-entity.png",
+		filename = "__WideChests__/graphics/gray_rounded.png",
 
+		-- Use the same 1x1 tile source for every 9-slice position
 		top_left = { x = 0, y = 0 },
-		top = { x = 36, y = 0 },
-		top_right = { x = 72, y = 0 },
+		top = { x = 0, y = 0 },
+		top_right = { x = 0, y = 0 },
 
-		left = { x = 0, y = 41 },
-		right = { x = 72, y = 41 },
+		left = { x = 0, y = 0 },
+		middle = { x = 0, y = 0 },
+		right = { x = 0, y = 0 },
 
-		bottom_left = { x = 0, y = 85, shift = { x = 1 } },
-		bottom = { x = 36, y = 85 },
-		bottom_right = { x = 72, y = 85 },
+		bottom_left = { x = 0, y = 0 },
+		bottom = { x = 0, y = 0 },
+		bottom_right = { x = 0, y = 0 },
 
-		widths = { left = 32, middle = 32, right = 32 },
-		heights = {
-			top = 37,
-			middle = 40,
-			bottom = 35,
-		},
-		shift = { x = 0, y = -8 },
+		-- T = 64 is correct: gray_rounded.png is 64x64
+		widths = { left = 64, middle = 64, right = 64 },
+		heights = { top = 64, middle = 64, bottom = 64 },
+
+		-- Required by sprite_generation.lua
+		shift = { x = 0, y = 0 },
+
+		-- 64px source rendered as 1 game tile (32px base) => scale 0.5
+		scale = 0.5,
 	},
 }
 
@@ -86,15 +88,25 @@ local function make_proxy_entity(width, height)
 
 		-- ConstantCombinatorPrototype
 		circuit_wire_connection_points = {
-			ZERO_CONNECTION_POINT, ZERO_CONNECTION_POINT, ZERO_CONNECTION_POINT, ZERO_CONNECTION_POINT,
+			ZERO_CONNECTION_POINT,
+			ZERO_CONNECTION_POINT,
+			ZERO_CONNECTION_POINT,
+			ZERO_CONNECTION_POINT,
 		},
 		activity_led_light_offsets = {
-			ZERO_VECTOR, ZERO_VECTOR, ZERO_VECTOR, ZERO_VECTOR,
+			ZERO_VECTOR,
+			ZERO_VECTOR,
+			ZERO_VECTOR,
+			ZERO_VECTOR,
 		},
-		sprites = { north = sprite, east = opp_sprite, south = sprite, west = opp_sprite },
+		sprites = {
+			north = sprite,
+			east = opp_sprite,
+			south = sprite,
+			west = opp_sprite,
+		},
 		circuit_wire_max_distance = default_circuit_wire_max_distance
-			+ math.max(width, height)
-			,
+			+ math.max(width, height),
 		draw_copper_wires = false,
 		draw_circuit_wires = true,
 
