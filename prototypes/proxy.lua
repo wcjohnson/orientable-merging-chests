@@ -47,7 +47,7 @@ local proxy_item = {
 
 local function make_proxy_entity(width, height)
 	---@type data.ElectricPolePrototype
-	local pin = {
+	local proto = {
 		-- PrototypeBase
 		type = "electric-pole",
 		name = table.concat(
@@ -99,6 +99,7 @@ local function make_proxy_entity(width, height)
 		selection_priority = 70,
 		allow_copy_paste = false,
 	}
+	return proto
 end
 
 function MergingChests.create_proxies()
