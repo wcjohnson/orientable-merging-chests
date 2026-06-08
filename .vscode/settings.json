@@ -14,4 +14,8 @@
   },
   "stylua.targetReleaseVersion": "latest",
   "Lua.workspace.ignoreSubmodules": false,
+  "Lua.workspace.library": [
+    "d:/dev/factorio/0-things/types.lua",
+    "d:/dev/factorio/0-things/remote-interface.lua"
+  ],
 }
