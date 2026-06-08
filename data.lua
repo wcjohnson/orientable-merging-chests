@@ -5,6 +5,7 @@ require('prototypes.custom_input')
 require('prototypes.groups')
 require('prototypes.item')
 require('prototypes.shortcuts')
+require('prototypes.proxy')
 
 --- @type segments_data
 MergingChests.steel_chest_segments = {
@@ -258,3 +259,5 @@ MergingChests.create_mergeable_chest(
 
 MergingChests.set_next_upgrade_of('container', MergingChests.chest_names.wooden, MergingChests.chest_names.iron)
 MergingChests.set_next_upgrade_of('container', MergingChests.chest_names.iron, MergingChests.chest_names.steel)
+
+MergingChests.create_proxies()
