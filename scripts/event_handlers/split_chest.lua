@@ -1,3 +1,5 @@
+local events = require("lib.core.event")
+
 --- @param event chest_merged_event
 local function raise_on_chest_split(event)
 	script.raise_event(MergingChests.on_chest_split_event_name, event)
@@ -84,4 +86,4 @@ local function on_player_alt_selected_area(event)
 	end
 end
 
-script.on_event(defines.events.on_player_alt_selected_area, on_player_alt_selected_area)
+events.bind(defines.events.on_player_alt_selected_area, on_player_alt_selected_area)

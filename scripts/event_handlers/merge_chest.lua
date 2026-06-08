@@ -1,3 +1,5 @@
+local events = require("lib.core.event")
+
 local bounding_box = require("__flib__/bounding-box")
 
 --- @param box BoundingBox
@@ -235,4 +237,4 @@ local function on_player_selected_area(event)
 	end
 end
 
-script.on_event(defines.events.on_player_selected_area, on_player_selected_area)
+events.bind(defines.events.on_player_selected_area, on_player_selected_area)
