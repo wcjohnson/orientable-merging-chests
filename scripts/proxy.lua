@@ -42,11 +42,18 @@ events.bind("things-cooperative_blueprint_edit", function()
 	)
 	if not chests or #chests == 0 then return end
 	for _, chest in pairs(chests) do
+		-- Skip irrelevant chests
 		if chest.deleted then goto continue end
 		local chest_name = chest.bp_entity.name
-    log({"", "WideChests proxy replacement: found chest ", chest_name})
+
+		-- Determine dimensions/chest types
 		local width, height, opp = widechest_dims(chest_name)
 		if (not width) or (not height) or (not opp) then goto continue end
+
+		-- No need to replace square chests as they can already be rotated
+		if width == height then goto continue end
+
+		-- Replace rectangular chests with proxies
 		---@type things.PartialBlueprintEntity
 		local new_entity = {
 			name = "WideChests-proxy-" .. width .. "-" .. height,
