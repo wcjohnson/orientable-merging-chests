@@ -2,7 +2,7 @@ data:extend({
 	{
 		type = 'selection-tool',
 		name = MergingChests.merge_selection_tool_name,
-		icon = '__WideChests__/graphics/icons/merge-chest-selector.png',
+		icon = '__orientable-merging-chests__/graphics/icons/merge-chest-selector.png',
 		icon_size = 32,
 		subgroup = 'tool',
 		order = 'c[automated-construction]-a[merge-chest]',

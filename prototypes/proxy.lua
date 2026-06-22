@@ -7,7 +7,7 @@ local create_sprite = require("scripts.sprite_generation")
 
 local segments = {
 	entity = {
-		filename = "__WideChests__/graphics/gray_rounded.png",
+		filename = "__orientable-merging-chests__/graphics/gray_rounded.png",
 
 		-- Use the same 1x1 tile source for every 9-slice position
 		top_left = { x = 0, y = 0 },
@@ -36,7 +36,7 @@ local segments = {
 
 ---@type data.Sprite
 local proxy_sprite = {
-	filename = "__WideChests__/graphics/gray_rounded.png",
+	filename = "__orientable-merging-chests__/graphics/gray_rounded.png",
 	width = 256,
 	height = 256,
 }
@@ -68,7 +68,7 @@ local proxy_item = {
 
 	-- ItemPrototype
 	stack_size = 50,
-	icon = "__WideChests__/graphics/icons/merge-chest-selector.png",
+	icon = "__orientable-merging-chests__/graphics/icons/merge-chest-selector.png",
 	icon_size = 32,
 	flags = { "hide-from-bonus-gui", "only-in-cursor" },
 	weight = 0,
@@ -114,7 +114,7 @@ local function make_proxy_entity(width, height)
 		max_health = 1,
 
 		-- EntityPrototype
-		icon = "__WideChests__/graphics/icons/merge-chest-selector.png",
+		icon = "__orientable-merging-chests__/graphics/icons/merge-chest-selector.png",
 		icon_size = 32,
 		collision_box = {
 			{ -width / 2 + 0.15, -height / 2 + 0.15 },

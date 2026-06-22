@@ -11,7 +11,7 @@ require('prototypes.proxy')
 MergingChests.steel_chest_segments = {
     wide_segments = {
         entity = {
-            filename = '__WideChests__/graphics/entity/'..MergingChests.chest_names.steel..'/wide-chest/wide-chest.png',
+            filename = '__orientable-merging-chests__/graphics/entity/'..MergingChests.chest_names.steel..'/wide-chest/wide-chest.png',
             top_left = { x = 0, y = 0 },
             top = { x = 32, y = 0 },
             top_right = { x = 64, y = 0 },
@@ -26,7 +26,7 @@ MergingChests.steel_chest_segments = {
             scale = 0.5
         },
         shadow = {
-            filename = '__WideChests__/graphics/entity/'..MergingChests.chest_names.steel..'/wide-chest/wide-chest-shadow.png',
+            filename = '__orientable-merging-chests__/graphics/entity/'..MergingChests.chest_names.steel..'/wide-chest/wide-chest-shadow.png',
             top_right = { x = 60, y = 0, shift = { x = 30 } },
 
             widths = { left = 0, middle = 0, right = 50 },
@@ -42,7 +42,7 @@ MergingChests.steel_chest_segments = {
     },
     high_segments = {
         entity = {
-            filename = '__WideChests__/graphics/entity/'..MergingChests.chest_names.steel..'/high-chest/high-chest.png',
+            filename = '__orientable-merging-chests__/graphics/entity/'..MergingChests.chest_names.steel..'/high-chest/high-chest.png',
             top_left = { x = 0, y = 0, shift = { y = 5 } },
             left = { x = 0, y = 22 },
             bottom_left = { x = 0, y = 54 },
@@ -57,7 +57,7 @@ MergingChests.steel_chest_segments = {
             scale = 0.5
         },
         shadow = {
-            filename = '__WideChests__/graphics/entity/'..MergingChests.chest_names.steel..'/high-chest/high-chest-shadow.png',
+            filename = '__orientable-merging-chests__/graphics/entity/'..MergingChests.chest_names.steel..'/high-chest/high-chest-shadow.png',
             top_right = { x = 0, y = 0, shift = { y = 6.5 } },
             right = { x = 0, y = 18 },
             bottom_right = { x = 0, y = 45 },
@@ -75,7 +75,7 @@ MergingChests.steel_chest_segments = {
     },
     warehouse_segments = {
         entity = {
-            filename = '__WideChests__/graphics/entity/'..MergingChests.chest_names.steel..'/warehouse/warehouse.png',
+            filename = '__orientable-merging-chests__/graphics/entity/'..MergingChests.chest_names.steel..'/warehouse/warehouse.png',
 
             top_left = { x = 0, y = 0, shift = { y = 7 } },
             top = { x = 66, y = 0, shift = { y = 7 } },
@@ -84,69 +84,69 @@ MergingChests.steel_chest_segments = {
             left = {
                 { x = 0, y = 75 },
                 {
-                    filename = '__WideChests__/graphics/entity/'..MergingChests.chest_names.steel..'/warehouse/warehouse-alternatives-2.png',
+                    filename = '__orientable-merging-chests__/graphics/entity/'..MergingChests.chest_names.steel..'/warehouse/warehouse-alternatives-2.png',
                     y = 57
                 },
                 {
-                    filename = '__WideChests__/graphics/entity/'..MergingChests.chest_names.steel..'/warehouse/warehouse-alternatives-3.png',
+                    filename = '__orientable-merging-chests__/graphics/entity/'..MergingChests.chest_names.steel..'/warehouse/warehouse-alternatives-3.png',
                     y = 57
                 },
                 {
-                    filename = '__WideChests__/graphics/entity/'..MergingChests.chest_names.steel..'/warehouse/warehouse-alternatives-4.png',
+                    filename = '__orientable-merging-chests__/graphics/entity/'..MergingChests.chest_names.steel..'/warehouse/warehouse-alternatives-4.png',
                     y = 57
                 },
                 {
-                    filename = '__WideChests__/graphics/entity/'..MergingChests.chest_names.steel..'/warehouse/warehouse-alternatives-5.png',
+                    filename = '__orientable-merging-chests__/graphics/entity/'..MergingChests.chest_names.steel..'/warehouse/warehouse-alternatives-5.png',
                     y = 57
                 },
                 {
-                    filename = '__WideChests__/graphics/entity/'..MergingChests.chest_names.steel..'/warehouse/warehouse-alternatives-6.png',
+                    filename = '__orientable-merging-chests__/graphics/entity/'..MergingChests.chest_names.steel..'/warehouse/warehouse-alternatives-6.png',
                     y = 57
                 }
             },
             middle = {
                 { x = 66, y = 75 },
                 {
-                    filename = '__WideChests__/graphics/entity/'..MergingChests.chest_names.steel..'/warehouse/warehouse-alternatives-2.png',
+                    filename = '__orientable-merging-chests__/graphics/entity/'..MergingChests.chest_names.steel..'/warehouse/warehouse-alternatives-2.png',
                     y = 57
                 },
                 {
-                    filename = '__WideChests__/graphics/entity/'..MergingChests.chest_names.steel..'/warehouse/warehouse-alternatives-3.png',
+                    filename = '__orientable-merging-chests__/graphics/entity/'..MergingChests.chest_names.steel..'/warehouse/warehouse-alternatives-3.png',
                     y = 57
                 },
                 {
-                    filename = '__WideChests__/graphics/entity/'..MergingChests.chest_names.steel..'/warehouse/warehouse-alternatives-4.png',
+                    filename = '__orientable-merging-chests__/graphics/entity/'..MergingChests.chest_names.steel..'/warehouse/warehouse-alternatives-4.png',
                     y = 57
                 },
                 {
-                    filename = '__WideChests__/graphics/entity/'..MergingChests.chest_names.steel..'/warehouse/warehouse-alternatives-5.png',
+                    filename = '__orientable-merging-chests__/graphics/entity/'..MergingChests.chest_names.steel..'/warehouse/warehouse-alternatives-5.png',
                     y = 57
                 },
                 {
-                    filename = '__WideChests__/graphics/entity/'..MergingChests.chest_names.steel..'/warehouse/warehouse-alternatives-6.png',
+                    filename = '__orientable-merging-chests__/graphics/entity/'..MergingChests.chest_names.steel..'/warehouse/warehouse-alternatives-6.png',
                     y = 57
                 }
             },
             right = {
                 { x = 130, y = 75 },
                 {
-                    filename = '__WideChests__/graphics/entity/'..MergingChests.chest_names.steel..'/warehouse/warehouse-alternatives-2.png',
+                    filename = '__orientable-merging-chests__/graphics/entity/'..MergingChests.chest_names.steel..'/warehouse/warehouse-alternatives-2.png',
                     y = 57
                 },
                 {
-                    filename = '__WideChests__/graphics/entity/'..MergingChests.chest_names.steel..'/warehouse/warehouse-alternatives-3.png',
+                    filename = '__orientable-merging-chests__/graphics/entity/'..MergingChests.chest_names.steel..'/warehouse/warehouse-alternatives-3.png',
                     y = 57
                 },
                 {
-                    filename = '__WideChests__/graphics/entity/'..MergingChests.chest_names.steel..'/warehouse/warehouse-alternatives-4.png',
+                    filename = '__orientable-merging-chests__/graphics/entity/'..MergingChests.chest_names.steel..'/warehouse/warehouse-alternatives-4.png',
                     y = 57
                 },
                 {
-                    filename = '__WideChests__/graphics/entity/'..MergingChests.chest_names.steel..'/warehouse/warehouse-alternatives-5.png',
+                    filename = '__orientable-merging-chests__/graphics/entity/'..MergingChests.chest_names.steel..'/warehouse/warehouse-alternatives-5.png',
                     y = 57
                 },
                 {
-                    filename = '__WideChests__/graphics/entity/'..MergingChests.chest_names.steel..'/warehouse/warehouse-alternatives-6.png',
+                    filename = '__orientable-merging-chests__/graphics/entity/'..MergingChests.chest_names.steel..'/warehouse/warehouse-alternatives-6.png',
                     y = 57
                 }
             },
@@ -155,7 +155,7 @@ MergingChests.steel_chest_segments = {
             bottom = {
                 { x = 66, y = 139 },
                 {
-                    filename = '__WideChests__/graphics/entity/'..MergingChests.chest_names.steel..'/warehouse/warehouse-alternatives-1.png'
+                    filename = '__orientable-merging-chests__/graphics/entity/'..MergingChests.chest_names.steel..'/warehouse/warehouse-alternatives-1.png'
                 }
             },
             bottom_right = { x = 130, y = 139 },
@@ -170,7 +170,7 @@ MergingChests.steel_chest_segments = {
             scale = 0.5
         },
         shadow = {
-            filename = '__WideChests__/graphics/entity/'..MergingChests.chest_names.steel..'/warehouse/warehouse-shadow.png',
+            filename = '__orientable-merging-chests__/graphics/entity/'..MergingChests.chest_names.steel..'/warehouse/warehouse-shadow.png',
 
             top_right = { x = 0, y = 0, shift = { x = 32, y = 7 } },
 
@@ -191,7 +191,7 @@ MergingChests.steel_chest_segments = {
     },
     trashdump_segments = {
         entity = {
-            filename = '__WideChests__/graphics/entity/'..MergingChests.chest_names.steel..'/trashdump/trashdump-entity.png',
+            filename = '__orientable-merging-chests__/graphics/entity/'..MergingChests.chest_names.steel..'/trashdump/trashdump-entity.png',
 
             top_left = { x = 0, y = 0 },
             top = { x = 36, y = 0 },
@@ -213,7 +213,7 @@ MergingChests.steel_chest_segments = {
             shift = { x = 0, y = -8 }
         },
         shadow = {
-            filename = '__WideChests__/graphics/entity/'..MergingChests.chest_names.steel..'/trashdump/trashdump-shadow.png',
+            filename = '__orientable-merging-chests__/graphics/entity/'..MergingChests.chest_names.steel..'/trashdump/trashdump-shadow.png',
 
             top_left = { x = 0, y = 0 },
             top = { x = 63, y = 0, shift = { x = -16 } },
