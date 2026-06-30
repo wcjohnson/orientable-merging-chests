@@ -1,15 +1,15 @@
 {
 	"name": "orientable-merging-chests",
 	"version": "7.0.0",
-	"factorio_version": "2.0",
+	"factorio_version": "2.1",
 	"title": "Merging Chests (Orientable)",
 	"author": "Atria",
 	"homepage": "https://github.com/wcjohnson/orientable-merging-chests",
 	"description": "Drop-in replacement for the WideChests/Merging Chests mod. Enables merging of multiple chests into one entity. Supports merging of arbitrary number of chests (configurable in mod settings). Blueprints with merged chests now support rotation and flipping.",
 	"dependencies": [
-		"base >= 2.0.18",
-		"flib >= 0.15.0",
-		"0-things >= 0.2.6",
+		"base >= 2.1.7",
+		"flib >= 0.17.0",
+		"0-things >= 0.3.0",
 		"! WideChests"
 	]
 }
