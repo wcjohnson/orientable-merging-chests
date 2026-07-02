@@ -68,7 +68,7 @@ MergingChests.chest_names = {
 
 local WHITELIST_SIZE_ANY = 'any'
 
---- @alias size_whitelist -- two dimentional array[width][height] = enabled?
+--- @alias size_whitelist 
 --- | { [number | `WHITELIST_SIZE_ANY`]: { [number | `WHITELIST_SIZE_ANY`]: boolean } }
 
 --- @alias circuit_connector_position
