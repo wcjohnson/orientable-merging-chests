@@ -13,11 +13,11 @@ local function widechest_dims(name)
 	end
 
 	-- Lua only returns captures corresponding to parens, so use:
-	local fullPrefix, kind, rest, n =
+	local fullPrefix, kind, rest, str_n =
 		name:match("^(WideChests_)(%a+)%-(.-)%-(%d+)$")
 
 	if kind then
-		n = tonumber(n)
+		local n = tonumber(str_n)
 
 		if kind == "wide" then
 			return n, 1, fullPrefix .. "high-" .. rest .. "-" .. n
@@ -33,18 +33,28 @@ end
 -- EXTRACTION
 --------------------------------------------------------------------------------
 
-events.bind("things-cooperative_blueprint_edit", function()
-	local _, chests = remote.call(
-		"things-blueprint-editing-v1",
-		"get_entities",
-		nil,
-		"WideChests_"
-	)
+---@class CooperativeBlueprinting.Entry
+---@field blueprint_entity BlueprintEntity The Factorio blueprint entity.
+---@field world_entity LuaEntity? The entity in the world that this entry corresponds to, if it exists.
+---@field index uint The fixed index of this entry among the entries
+---@field deleted boolean? If `true`, this entry has been deleted and will not be present in the final blueprint.
+---@field retagged boolean? If `true`, this entry's tags have been modified.
+---@field spliced boolean? If `true`, this entry has been modified in a way that requires the blueprint to be rewritten. This will always be true when `deleted` is true, but may also be true for other modifications.
+
+events.bind("cooperative-blueprinting-v1-on_extract",
+function(ev)
+	local key = ev.blueprint_key
+	if not key then return end
+	local entries = remote.call("cooperative-blueprinting-v1", "get_entries", key) --[[@as CooperativeBlueprinting.Entry[]? ]]
+	if not entries then return end
+	local chests = tlib.filter(entries, function(entry)
+		return entry.blueprint_entity.name:sub(1, 11) == "WideChests_"
+	end)
 	if not chests or #chests == 0 then return end
 	for _, chest in pairs(chests) do
 		-- Skip irrelevant chests
 		if chest.deleted then goto continue end
-		local chest_name = chest.bp_entity.name
+		local chest_name = chest.blueprint_entity.name --[[@as string]]
 
 		-- Determine dimensions/chest types
 		local width, height, opp = widechest_dims(chest_name)
@@ -54,14 +64,15 @@ events.bind("things-cooperative_blueprint_edit", function()
 		if width == height then goto continue end
 
 		-- Replace rectangular chests with proxies
-		---@type things.PartialBlueprintEntity
+		---@type Partial<BlueprintEntity>
 		local new_entity = {
 			name = "WideChests-proxy-" .. width .. "-" .. height,
 			tags = { normal = chest_name, rotated = opp },
 		}
 		remote.call(
-			"things-blueprint-editing-v1",
-			"replace_entity",
+			"cooperative-blueprinting-v1",
+			"replace",
+			key,
 			chest.index,
 			new_entity
 		)
@@ -82,6 +93,7 @@ local WEST = defines.direction.west
 local function handle_generic_built(ev)
 	local player = ev.player_index and game.get_player(ev.player_index) or nil
 	local entity = ev.entity
+	if not entity then return end
 	local is_ghost = entity.type == "entity-ghost"
 	local name = is_ghost and entity.ghost_name or entity.name
 	if (not name) or (name:sub(1, 16) ~= "WideChests-proxy") then return end
@@ -94,7 +106,7 @@ local function handle_generic_built(ev)
 	local wires = elib.get_wire_connections_from(entity, false)
 
 	entity.destroy()
-	local chest_name = ((direction == NORTH or direction == SOUTH) and tags.normal) or ((direction == EAST or direction == WEST) and tags.rotated) --[[@as string?]]
+	local chest_name = (((direction == NORTH or direction == SOUTH) and tags.normal) or ((direction == EAST or direction == WEST) and tags.rotated)) --[[@as string?]]
 	if not chest_name then return end
 
 	local replacement = nil
